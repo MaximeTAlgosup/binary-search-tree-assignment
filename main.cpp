@@ -18,7 +18,7 @@ int main()
 {
     Book harryPotter("Harry Potter", "JK Rowling", 1997, 120000000, "fantasy");
     Book theHobbit("The Hobbit", "J.R.R. Tolkien", 1937, 140600000, "fantasy");
-    // Book prideAndPrejudice("Pride and Prejudice", "Jane Austen", 1813, 20000000, "romance");
+    Book prideAndPrejudice("Pride and Prejudice", "Jane Austen", 1813, 20000000, "romance");
     Book toKillAMockingBird("To Kill a Mockingbird", "Harper Lee", 1960, 40000000, "classic");
     Book theDaVinciCode("The Da Vinci Code", "Dan Brown", 2003, 80000000, "thriller");
     Book theCatcherInTheRye("The Catcher in the Rye", "J.D. Salinger", 1951, 65000000, "classic");
@@ -36,7 +36,7 @@ int main()
 
     books.push_back(harryPotter);
     books.push_back(theHobbit);
-    // books.push_back(prideAndPrejudice);
+    books.push_back(prideAndPrejudice);
     books.push_back(toKillAMockingBird);
     books.push_back(theDaVinciCode);
     books.push_back(theCatcherInTheRye);
