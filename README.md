@@ -25,4 +25,5 @@ The system provides the following functionality:
 The system has the following limitations:
 
 1. The system does not persist data between runs
-2. The system does not handle the suppression of a book having two childs
+2. The system does not handle the suppression of a book having two children
+3. The system does not handle strings
