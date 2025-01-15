@@ -69,6 +69,7 @@ void search()
 
 void searchFromInt(int data, bool search)
 {
+    Node* saveParent;
     Node* parent;
     Node* current;
     
@@ -82,6 +83,7 @@ void searchFromInt(int data, bool search)
         parent = NULL;
         while (true)
         {
+            saveParent = parent;
             parent = current;
             
             if (data == parent->data)
@@ -92,7 +94,7 @@ void searchFromInt(int data, bool search)
                 }
                 else
                 {
-                    removeFromInt(data, parent, current);
+                    removeFromInt(data, saveParent, current);
                 }
                 return;
             }
@@ -257,8 +259,9 @@ void remove()
 
 void removeFromInt(int data, Node* parent, Node* current)
 {
-    Node* temp;
-    
+    Node* greatAncestor;   // parent of the node you want to remove
+    Node* ancestor;        // the node you want to remove
+
     if (current->leftChild == NULL && current->rightChild == NULL)
     {
         if (parent->leftChild == current)
@@ -283,8 +286,54 @@ void removeFromInt(int data, Node* parent, Node* current)
         }
         delete current;
     }
+    else if (current->rightChild == NULL)
+    {
+        if (parent->leftChild == current)
+        {
+            parent->leftChild = current->leftChild;
+        }
+        else
+        {
+            parent->rightChild = current->leftChild;
+        }
+        delete current;
+    }
     else
     {
-        return;
+        if (current != ROOT)
+        {
+            greatAncestor = parent;
+        }
+
+        ancestor = current;
+
+        current = current->leftChild;
+
+        while (current->rightChild != NULL)
+        {
+            parent = current;
+            current = current->rightChild;
+        }
+
+        if (current->leftChild)
+        {
+            parent->rightChild = current->leftChild;
+            current->leftChild = NULL;
+        }
+        else
+        {
+            parent->rightChild = NULL;
+        }
+
+        current->index = ancestor->index;
+        current->leftChild = ancestor->leftChild;
+        current->rightChild = ancestor->rightChild;
+
+        if (greatAncestor != NULL)
+        {
+            greatAncestor->leftChild = current;
+        }
+
+        delete ancestor;
     }
 }

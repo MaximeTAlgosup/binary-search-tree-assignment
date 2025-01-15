@@ -18,27 +18,45 @@ int main()
 {
     Book harryPotter("Harry Potter", "JK Rowling", 1997, 120000000, "fantasy");
     Book theHobbit("The Hobbit", "J.R.R. Tolkien", 1937, 140600000, "fantasy");
-    Book PrideAndPrejudice("Pride and Prejudice", "Jane Austen", 1813, 20000000, "romance");
+    // Book prideAndPrejudice("Pride and Prejudice", "Jane Austen", 1813, 20000000, "romance");
     Book toKillAMockingBird("To Kill a Mockingbird", "Harper Lee", 1960, 40000000, "classic");
     Book theDaVinciCode("The Da Vinci Code", "Dan Brown", 2003, 80000000, "thriller");
-    Book TheCatcherInTheRye("The Catcher in the Rye", "J.D. Salinger", 1951, 65000000, "classic");
-    Book Twilight("Twilight", "Stephenie Meyer", 2005, 120000000, "fantasy/romance");
+    Book theCatcherInTheRye("The Catcher in the Rye", "J.D. Salinger", 1951, 65000000, "classic");
+    Book twilight("Twilight", "Stephenie Meyer", 2005, 120000000, "fantasy/romance");
+    Book theGreatGatsby("The Great Gatsby", "F. Scott Fitzgerald", 1925, 30000000, "classic");
+    Book theLionTheWitchAndTheWardrobe("The Lion, the Witch and the Wardrobe", "C.S. Lewis", 1950, 85000000, "fantasy");
+    Book theHungerGames("The Hunger Games", "Suzanne Collins", 2008, 65000000, "fantasy");
+    Book theAlchemist("The Alchemist", "Paulo Coelho", 1988, 65000000, "fantasy");
+    Book theLordOfTheRings("The Lord of the Rings", "J.R.R. Tolkien", 1954, 150000000, "fantasy");
+    Book animalFarm("Animal Farm", "George Orwell", 1945, 50000000, "classic");
+    Book theAdventuresOfHuckleberryFinn("The Adventures of Huckleberry Finn", "Mark Twain", 1884, 30000000, "classic");
+    Book theLittlePrince("The Little Prince", "Antoine de Saint-Exupéry", 1943, 140000000, "fantasy");
 
     vector<Book> books;
 
     books.push_back(harryPotter);
     books.push_back(theHobbit);
-    books.push_back(PrideAndPrejudice);
+    // books.push_back(prideAndPrejudice);
     books.push_back(toKillAMockingBird);
     books.push_back(theDaVinciCode);
-    books.push_back(TheCatcherInTheRye);
-    books.push_back(Twilight);
+    books.push_back(theCatcherInTheRye);
+    books.push_back(twilight);
+    books.push_back(theGreatGatsby);
+    books.push_back(theLionTheWitchAndTheWardrobe);
+    books.push_back(theHungerGames);
+    books.push_back(theAlchemist);
+    books.push_back(theLordOfTheRings);
+    books.push_back(animalFarm);
+    books.push_back(theAdventuresOfHuckleberryFinn);
+    books.push_back(theLittlePrince);
 
     for (int i = 0; i < books.size(); i++)
     {
         int publicationYear = books[i].getPublicationYear();
         insertBST(publicationYear);
     }
+
+    balanceBST(ROOT);
 
     while (true)
     {
